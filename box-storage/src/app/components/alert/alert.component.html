@@ -1,0 +1,9 @@
+<div class="alert alert-{{ type }}">
+    <div class="icon__wrapper">
+      <mat-icon>warning</mat-icon>
+    </div>
+    <div>
+        {{ message }}
+    </div>
+    <mat-icon (click)="showError()" class="btn-close" >close</mat-icon>
+</div>

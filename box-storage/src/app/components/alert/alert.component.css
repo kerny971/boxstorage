@@ -1,0 +1,43 @@
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.alert {
+  min-height: 67px;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 12px;
+  padding: 16px 22px 17px 20px;
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: space-between;
+  color: #FFF;
+  font-weight: 400;
+}
+.alert-warning {
+  background: var(--warning);
+}
+.alert-success {
+  background: var(--success);
+}
+.alert-primary {
+  background: var(--primary);
+}
+.alert-dark {
+  background: var(--dark);
+}
+.alert-error {
+  background: var(--error);
+}
+
+.btn-close {
+    cursor: pointer;
+}
+

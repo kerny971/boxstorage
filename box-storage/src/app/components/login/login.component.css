@@ -1,0 +1,59 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1em;
+    text-align: center;
+}
+
+.form-fields {
+    max-width: 300px;
+    margin: 2em auto;
+}
+
+.form-field > mat-form-field {
+    display: block;
+    margin: 0 auto;
+    margin: 1.5em 0;
+}
+
+.button-submit {
+    display: block;
+    margin: 0 0 0 auto;
+}
+
+.btn-password {
+    cursor: pointer;
+}
+
+.choice {
+    border-top: 1px solid lightgrey;
+    font-weight: 300;
+    padding: 1em 0;
+    text-align: center;
+    margin: 2em 0;
+}
+.choice a {
+    margin-top: 1em;
+}
+
+.btn-m {
+    height: 3.5em;
+}
+
+.signup-success {
+    text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+    .link-home {
+      flex-direction: row;
+      align-items: center;
+    }
+    .link-home h1 {
+      font-size: 1.5em;
+    }
+
+    .container {
+        text-align: left;
+    }
+  }

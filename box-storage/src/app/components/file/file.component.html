@@ -1,0 +1,72 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <div class="file-container">
+            <div class="ext">{{ file.extension ?? 'file' }}</div>
+            <div class="name">
+                {{ file.original_name }}
+            </div>
+        </div>
+    </mat-expansion-panel-header>
+    <div class="expansion">
+        <div class="grid">
+            <div class="col col-name">
+                {{ file.original_name }}
+            </div>
+            <div class="col col-date">
+                <small>
+                    date
+                </small>
+                <div>{{ file.created_at | date: 'short' }}</div>
+            </div>
+            <div class="col col-size">
+                <small>
+                    taille
+                </small>
+                <div>{{ file.size | convertOctet }}</div>
+            </div>
+            <div class="col col-format">
+                <small>
+                    format
+                </small>
+                <div>{{ file.type }}</div>
+            </div>
+
+            <div *ngIf="progress" class="col col-progress">
+                <mat-progress-bar mode="determinate" value="{{ progress }}" class="progress-bar"></mat-progress-bar>
+                <div>
+                    {{ progress }} %
+                </div>
+            </div>
+
+            <div class="col col-share-url" *ngIf="shareUrl">
+                <button mat-stroked-button matTooltip="Cliquer pour copier le lien" color="link" (click)="removeShareUrl()">
+                    <mat-icon>content_copy</mat-icon> Copier -
+                    exp. {{ (timeRemaining / 1000) }} sec.
+                </button> 
+            </div>
+
+            <div class="col col-share">
+                <button type="button" mat-stroked-button color="basic" (click)="getFiles()">
+                    <mat-icon>link</mat-icon> Partager
+                </button>
+            </div>
+            <div class="col col-download">
+                <button *ngIf="!progress; else btnCancelDownload" type="button" mat-stroked-button color="basic" (click)="downloadFile()">
+                    <mat-icon>file_download</mat-icon> Télécharger
+                </button>
+            </div>
+            <div class="col col-delete">
+                <button type="button" mat-stroked-button color="warn" (click)="deleteFiles()">
+                    <mat-icon>delete</mat-icon> Supprimer
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-expansion-panel>
+
+
+<ng-template #btnCancelDownload>
+    <button type="button" mat-stroked-button color="warn" (click)="cancelDownload()">
+        <mat-icon>close</mat-icon> Annuler
+    </button>
+</ng-template>

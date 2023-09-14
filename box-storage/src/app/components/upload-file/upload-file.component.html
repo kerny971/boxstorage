@@ -1,0 +1,55 @@
+<div class="storage">
+  <mat-progress-bar color="primary" mode="determinate" value="{{ (filesSize * 100) / maxFilesSize }}"></mat-progress-bar>
+  <div>
+    <small>
+      Espace utilisé
+    </small>
+    {{ filesSize | convertOctet }} / {{ maxFilesSize | convertOctet }}
+  </div>
+</div>
+
+<div *ngIf="filesSize < maxFilesSize; else noStorage">
+  <div class="input-files">
+      <input type="file" multiple="multiple" name="file" id="file" (change)="selectFile($event)" />
+      <label *ngIf="currentFile == undefined; else currFile" for="file" class="{{ selectedFiles ? 'file-selected' : '' }}">
+        {{ selectedFiles ? (selectedFiles.length > 1 ? selectedFiles[0].name + " et " + (selectedFiles.length - 1) + ' autre(s) fichier(s)' : selectedFiles[0].name) : "Envoyer un fichier" }}
+      </label>
+  </div>
+  
+  <ng-template #currFile>
+    <div class="is-sending">
+      {{ selectedFiles?.length }} fichiers en cours d'envoi...
+    </div>
+  </ng-template>
+  
+  <div class="progress-zone">
+    <button *ngIf="!currentFile; else cancelBtnUpload" mat-fab color="primary" [disabled]="!selectedFiles" (click)="upload()">
+      <mat-icon>backup</mat-icon>
+    </button>
+    <mat-progress-bar *ngIf="currentFile" mode="determinate" value="{{ progress }}"></mat-progress-bar>
+    <div class="percent" *ngIf="currentFile">
+      {{ progress }} %
+    </div>
+  </div>
+  
+  <!-- <div *ngIf="showError" class="status">
+    <app-alert [type]="'error'" [message]="message" [(errorShow)]="showError"></app-alert>
+  </div> -->
+</div>
+
+<ng-template #cancelBtnUpload>
+  <button mat-fab color="warn" (click)="cancelUpload()">
+    <mat-icon>close</mat-icon>
+  </button>
+</ng-template>
+
+<ng-template #noStorage>
+  <div class="satured">
+    <div>
+      Votre espace de stockage est saturée...
+    </div>
+    <div>
+      Supprimer quelques fichiers pour en rajouter d'autres.
+    </div>
+  </div>
+</ng-template>

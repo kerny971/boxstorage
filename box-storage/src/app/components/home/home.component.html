@@ -1,0 +1,32 @@
+<div class="container">
+
+    <a routerLink="" class="link-home">
+        <img alt="boxstorage logo cloud" src="/assets/logo.svg" height="60px" />
+        <h1>BoxStorage</h1>
+    </a>
+
+    <img src="https://kinsta.com/fr/wp-content/uploads/sites/4/2022/08/what-is-cloud-storage.jpg" class="img-principale" alt="Cloud en ligne" />
+
+    <div class="branding">
+        <div class="para">
+           <strong>BoxStorage</strong> est une application cloud. Bénificiez d'un espace gratuit de 2 Go pour stocker n'importe quel type de fichier et partagez-les grâce à la génération de lien !
+           <div class="closing-brand">
+            Une interface simple, un compte et vos fichiers dans le cloud dès maintenant.
+           </div>
+        </div>
+    </div>
+
+    <div class="login">
+        <a *ngIf="isLogged; else login" mat-stroked-button routerLink="/dashboard" class="btn-login btn-dashboard">Accéder au Dashboard</a>
+    </div>
+    <ng-template #login>
+            <a mat-stroked-button routerLink="/inscription" class="btn-login">
+                <mat-icon>person_add</mat-icon>
+                S'inscrire
+            </a>
+            <a mat-flat-button color="primary" routerLink="/login" class="btn-login">
+                <mat-icon>login</mat-icon>
+                Se connecter
+            </a>
+    </ng-template>
+</div>

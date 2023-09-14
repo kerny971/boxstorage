@@ -1,0 +1,15 @@
+<h2>Mes fichiers</h2>
+<div class="effect"></div>
+<div class="container">
+    <div>
+        <mat-accordion *ngIf="files.length; else noFiles">
+            <app-file [files]="files" *ngFor="let file of files" hideToggle (filesChange)="files=$event" [file]="file" class="file"></app-file>
+        </mat-accordion>
+    </div>
+</div>
+
+<ng-template #noFiles>
+    <div class="no-files">
+        Aucun fichier n'à été enregistré !
+    </div>
+</ng-template>

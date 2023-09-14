@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="00a55c01-8605-4784-8be4-6670c36df030" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/BoxSave/.env" beforeDir="false" afterPath="$PROJECT_DIR$/BoxSave/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BoxSave/app/controllers/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/BoxSave/app/controllers/AuthController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BoxSave/app/controllers/TestController.js" beforeDir="false" afterPath="$PROJECT_DIR$/BoxSave/app/controllers/TestController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/src/app/components/dashboard/dashboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/box-storage/src/app/components/dashboard/dashboard.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/src/app/components/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/box-storage/src/app/components/dashboard/dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/src/app/components/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/box-storage/src/app/components/dashboard/dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/src/app/components/file/file.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/box-storage/src/app/components/file/file.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/src/app/components/file/file.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/box-storage/src/app/components/file/file.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/src/app/components/file/file.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/box-storage/src/app/components/file/file.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/src/app/components/get-files/get-files.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/box-storage/src/app/components/get-files/get-files.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/src/app/components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/box-storage/src/app/components/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/box-storage/src/app/components/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/src/app/components/upload-file/upload-file.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/box-storage/src/app/components/upload-file/upload-file.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/box-storage/src/app/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/box-storage/src/environments/environment.development.ts" beforeDir="false" afterPath="$PROJECT_DIR$/box-storage/src/environments/environment.development.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\laragon\bin\php\php-8.1.10-Win32-vs16-x64\php.exe" />
+  <component name="ProjectId" id="2UogkQePhgQparaqNwfP3IF2qXJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "inProgress",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00a55c01-8605-4784-8be4-6670c36df030" name="Changes" comment="" />
+      <created>1693611492688</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693611492688</updated>
+      <workItem from="1693611494282" duration="18000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

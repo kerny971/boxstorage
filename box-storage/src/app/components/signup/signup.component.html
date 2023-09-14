@@ -1,0 +1,165 @@
+<div class="container">
+
+    <a routerLink="" class="link-home">
+        <img alt="Boxstorage Logo Cloud" src="/assets/logo.svg" height="60px" />
+        <h1>BoxStorage</h1>
+    </a>
+
+    <form *ngIf="!statusSignup; else signupSuccess" [formGroup]="formSignUp" (ngSubmit)="signup($event)">
+        <div>
+            <h2>Création de compte</h2>
+            <p>
+                Stocker jusqu'à <strong>2 Go de données Gratuitement</strong> sur BoxStorage. Enregistrer n'importe quel type de fichier, téléchargez-le quand vous voulez, partagez-le avec vos proches.
+                Il vous suffit d'une adresse mail et c'est parti.
+            </p>
+        </div>
+        <!-- <app-alert *ngIf="showError" [(errorShow)]="showError" [type]="'error'" [message]="res.error.errors.message"></app-alert> -->
+        <div class="form-fields">
+            <div class="form-field">
+                <mat-form-field appearance="outline">
+                    <mat-label>Pseudo</mat-label>
+                    <input (keyup)="pseudoLength($event)" type="text" #pseudo matInput placeholder="Ex: Jerome72..." formControlName="pseudo">
+                    <mat-icon matSuffix>person_outline</mat-icon>
+                    <mat-hint align="end">{{ pseudoSize }} / 33 caractères Max.</mat-hint>
+                    
+                    
+                    <mat-error *ngIf="formSignUp.controls['pseudo'].touched && formSignUp.controls['pseudo'].errors">
+                        <mat-icon>error</mat-icon>
+                        <span [ngSwitch]="getErrorList(formSignUp.controls['pseudo'].errors)">
+                            <span *ngSwitchCase="'required'">
+                                Pseudo requis !
+                            </span>
+                            <span *ngSwitchCase="'pattern'">
+                                Caractères alphanumériques uniquement !
+                            </span>
+                            <span *ngSwitchCase="'minlength'">
+                                Minimum 3 caractères autorisés !
+                            </span>
+                            <span *ngSwitchCase="'maxlength'">
+                                Maximum 33 caractères autorisés !
+                            </span>
+                            <span *ngSwitchCase="'checkPseudoValidator'">
+                                Pseudo non disponible !
+                            </span>
+                            <span *ngSwitchdefault>
+                                Pseudo non valide !
+                            </span>
+                        </span>
+                    </mat-error>
+
+
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Ex: jerôme@gmail.com..." formControlName="email">
+                    <mat-icon matSuffix>alternate_email</mat-icon>
+                    <mat-hint align="end">Votre adresse électronique</mat-hint>
+
+                    <mat-error *ngIf="formSignUp.controls['email'].touched && formSignUp.controls['email'].errors">
+                        <mat-icon>error</mat-icon>
+                        <span [ngSwitch]="getErrorList(formSignUp.controls['email'].errors)">
+                            <span *ngSwitchCase="'required'">
+                                Adresse électronique requise !
+                            </span>
+                            <span *ngSwitchCase="'email'">
+                                Adresse électronique non valide
+                            </span>
+                            <span *ngSwitchCase="'pattern'">
+                                Adresse électronique non valide
+                            </span>
+                            <span *ngSwitchCase="'checkEmailValidator'">
+                                Email non disponible !
+                            </span>
+                            <span *ngSwitchdefault>
+                                Adresse électronique non accepté !
+                            </span>
+                        </span>
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <mat-form-field appearance="outline">
+                    <mat-label>Mot de Passe</mat-label>
+                    <input formControlName="password" matInput type="{{ showPassword ? 'text' : 'password' }}" (keyup)="passwordLength($event)" placeholder="Saisir votre mot de passe...">
+                    <mat-icon *ngIf="showPassword == false" (click)="toggleShowPassword()" matSuffix class="btn-password">lock</mat-icon>
+                    <mat-icon *ngIf="showPassword == true" (click)="toggleShowPassword()" matSuffix class="btn-password">lock_open</mat-icon>
+                    <mat-hint align="end">{{ passwordSize }} / 12 caractères Min.</mat-hint>
+
+                    <mat-error *ngIf="formSignUp.controls['password'].touched && formSignUp.controls['password'].errors">
+                        <mat-icon>error</mat-icon>
+                        <span [ngSwitch]="getErrorList(formSignUp.controls['password'].errors)">
+                            <span *ngSwitchCase="'required'">
+                                Mot de passe obligatoire !
+                            </span>
+                            <span *ngSwitchCase="'maxlength'">
+                                {{ passwordSize }} / 64 caractères autorisés
+                            </span>
+                            <span *ngSwitchCase="'minlength'">
+                                {{ passwordSize }} / 12 caractères Min. autorisés
+                            </span>
+                            <span *ngSwitchCase="'pattern'">
+                                Au moins 1 mininuscule, 1 majuscule, 1 chiffre ! (caractères alphanumérique)
+                            </span>
+                            <span *ngSwitchdefault>
+                                Mot de passe non accepté !
+                            </span>
+                        </span>
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+            <button *ngIf="signUpLoaded; else loading" type="submit" mat-raised-button matRipple color="primary" [disabled]="formSignUp.valid === false" class="button-submit btn-m">VALIDER</button>
+            <div class="choice">
+                <div>
+                    Vous possédez déjà un compte ?
+                </div>
+                <a mat-stroked-button class="btn-m" routerLink="/login">Se connecter</a>
+            </div>
+        </div>
+    </form>
+
+    <ng-template #signupSuccess>
+        <div class="valid-form">
+            <h4>
+                Votre inscription à bien été prise en compte !
+            </h4>
+            <small>
+                Les informations associées à votre compte sont les suivantes :
+            </small>
+            <div class="fields">
+                <div class="field">
+                    <mat-form-field appearance="fill">
+                        <mat-label for="pseudo">Pseudo</mat-label>
+                        <input matInput value="{{ formSignUp.get('pseudo')!.value }}" placeholder="Votre pseudo" disabled />
+                        <mat-icon matSuffix class="icon-valid">done</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <mat-form-field appearance="fill">
+                        <mat-label for="email">Email</mat-label>
+                        <input matInput value="{{ formSignUp.get('email')!.value }}" placeholder="Votre email" disabled />
+                        <mat-icon matSuffix class="icon-valid">done</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <mat-form-field appearance="fill">
+                        <mat-label for="password">Password</mat-label>
+                        <input matInput value="{{ formSignUp.get('password')!.value }}" placeholder="Votre mot de passe" type="{{ showPassword ? 'text' : 'password' }}" disabled />
+                        <mat-icon *ngIf="showPassword == false" (click)="toggleShowPassword()" matSuffix class="btn-password">lock</mat-icon>
+                        <mat-icon *ngIf="showPassword == true" (click)="toggleShowPassword()" matSuffix class="btn-password">lock_open</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="choice">
+                    <a mat-stroked-button class="btn-m" routerLink="/login">Se connecter</a>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>
+
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>

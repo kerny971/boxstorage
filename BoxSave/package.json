@@ -1,0 +1,35 @@
+{
+  "name": "boxsave",
+  "version": "1.0.0",
+  "description": "Application pour sauvegarder dans le cloud des fichiers textes et multimedia",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "RodyDev",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "connect-busboy": "^1.0.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "crypto-hash": "^2.0.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.1",
+    "mime": "^3.0.0",
+    "moment": "^2.29.4",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.9.4",
+    "nodemon": "^3.0.1",
+    "progress-stream": "^2.0.0",
+    "stream-meter": "^1.0.4",
+    "uuid": "^9.0.0"
+  }
+}

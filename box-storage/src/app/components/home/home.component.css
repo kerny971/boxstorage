@@ -1,0 +1,44 @@
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.link-home {
+    justify-content: center;
+}
+
+.img-principale {
+    width: 100%;
+    border-radius: .5em;
+}
+
+p {
+    margin: 1em 0;
+    padding: 1em;
+}
+
+strong {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.para {
+    margin: 2em 0;
+    text-align: justify;
+    padding: 0 1em;
+}
+
+.closing-brand {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.login {
+    text-align: center;
+}
+
+.btn-login {
+    margin: 0 1em;
+    height: 3.5em;
+}

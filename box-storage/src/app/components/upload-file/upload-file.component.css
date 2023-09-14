@@ -1,0 +1,94 @@
+.input-files {
+    display: flex;
+    margin: 1em 0;
+    text-align: center;
+    justify-content: center;
+    overflow: hidden;   
+}
+
+.input-files input {
+    display: flex;
+    overflow: hidden;
+    width: 0.1px;
+	height: 0.1px;
+    display: none;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.input-files label {
+    background: #F2F2F2;
+    width: 100%;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 4em 2em;
+    border-radius: .2em;
+    overflow: hidden;
+    display: block;
+    cursor: pointer;
+}
+
+.btn-upload {
+    margin: 1em;
+    text-align: right;
+}
+
+.progress-zone {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+    font-weight: 500;
+    align-items: center;
+    margin-bottom: .5em;
+}
+
+.percent {
+    width: 80px;
+    text-align: right;
+}
+
+.status {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    border: 1px solid lightgrey;
+    padding: 1em;
+    background: rgba(255, 255, 255, .8);
+}
+
+.storage {
+    display: flex;
+    align-items: center;
+    margin: 1em 0;
+    gap: 1em;
+}
+.storage > div {
+    font-size: .9em;
+    width: 200px;
+    text-align: right;
+    font-weight: 500;
+}
+.storage > div > small {
+    display: block;
+}
+
+.storage  .mdc-linear-progress_buffer {
+    height: 33px;
+}
+
+.satured {
+    margin: 2em 0 4em;
+    padding: 2em 2em;
+    text-align: center;
+}
+
+.is-sending {
+    padding: 1em 2em;
+    margin: 3em;
+    border: 1px solid;
+    font-family: Share Tech;
+}

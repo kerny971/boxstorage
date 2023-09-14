@@ -1,0 +1,50 @@
+<div class="launch-loading" *ngIf="loading.size">
+    <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="container">
+    <div class="header">
+        <a routerLink="" class="link-home">
+            <img alt="boxstorage logo cloud" src="/assets/logo.svg" height="30px" />
+            <h1>BoxStorage</h1>
+        </a>
+        <div class="user">
+            <mat-icon>account_circle</mat-icon>
+            <span>{{ user.pseudo }}</span>
+            <button mat-icon-button type="button" class="logout-btn" (click)="logout()">
+                <mat-icon>logout</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div *ngIf="user.is_confirmed; else notConfirmed" class="content">
+        <app-upload-file [(files)]="files" class="upload"></app-upload-file>
+        <div class="files">
+            <app-get-files [files]="files" (filesChange)="files=$event"></app-get-files>
+        </div>
+        
+    </div>
+</div>
+
+<ng-template #notConfirmed>
+    <div class="email">
+        Confirmer mon adresse électronique : 
+        <u>{{ user.email }}</u>
+        <button *ngIf="timeValidationSubmitted <= 0; else codeSubmit" type="button" mat-raised-button color="primary" class="btn-m" (click)="checkCode()">
+            Recevoir mon code de validation
+        </button>
+        <ng-template #codeSubmit>
+            <div class="msg-code-submitted">
+                <div>
+                    Un lien vous à été transmis par mail et est valide durant
+                </div>
+                <span>{{ hoursRemaining ? (hoursRemaining | number: '2.0-0') + ' : ' : '' }} {{ minutesRemaining | number: '2.0-0' }} : {{ secondsRemaining | number: '2.0-0' }}</span>
+            </div>
+        </ng-template>
+        <div class="validation-email-status">
+            <mat-icon>help</mat-icon>
+            <div>
+                Cliquer sur le bouton déconnexion une fois que votre adresse électronique aura été valider et reconnectez-vous
+            </div>
+        </div>
+    </div>
+
+</ng-template>

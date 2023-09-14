@@ -1,0 +1,32 @@
+
+h2 {
+    margin: 1em 1em 5px;
+}
+
+.effect {
+    width: 40px;
+    background: #000;
+    height: 3px;
+    margin: 0 1.5em 1.5em;
+}
+
+.no-files {
+    height: 50px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    margin: 0 auto 5em;
+    overflow: hidden;
+}
+
+.mat-expansion-panel-header {
+    padding: 0;
+}
+
+.mat-content {
+    margin: 0 8px !important;
+}

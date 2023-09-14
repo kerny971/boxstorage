@@ -1,0 +1,79 @@
+<div class="container">
+    <a routerLink="" class="link-home">
+        <img alt="BoxStorage logo cloud" src="/assets/logo.svg" height="60px" />
+        <h1>BoxStorage</h1>
+    </a>
+    <form *ngIf="!statusLogin; else signupSuccess" [formGroup]="form" (ngSubmit)="login($event)">
+        <div>
+            <h2>Connexion à votre compte</h2>
+            <p>
+                Connectez-vous, accéder à votre espace de stockage en ligne, téléchargez les fichiers que vous avez mis en ligne ou partagez-les avec vos proches !
+            </p>
+        </div>
+        <!-- <app-alert *ngIf="showError" [(errorShow)]="showError" [type]="'error'" [message]="resLogin!.error.errors.message"></app-alert> -->
+        <div class="form-fields">
+            <div class="form-field">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Ex: jerôme@gmail.com..." formControlName="email">
+                    <mat-icon matSuffix>alternate_email</mat-icon>
+                    <mat-hint align="end">Votre adresse électronique</mat-hint>
+
+                    <mat-error *ngIf="form.controls['email'].touched && form.controls['email'].errors">
+                        <mat-icon>error</mat-icon>
+                        <span [ngSwitch]="getErrorList(form.controls['email'].errors)">
+                            <span *ngSwitchCase="'required'">
+                                Adresse électronique requise !
+                            </span>
+                            <span *ngSwitchCase="'email'">
+                                Adresse électronique non valide
+                            </span>
+                            <span *ngSwitchCase="'pattern'">
+                                Adresse électronique non valide
+                            </span>
+                        </span>
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <mat-form-field appearance="outline">
+                    <mat-label>Mot de Passe</mat-label>
+                    <input formControlName="password" matInput type="{{ showPassword ? 'text' : 'password' }}" placeholder="Saisir votre mot de passe...">
+                    <mat-icon *ngIf="showPassword == false" (click)="toggleShowPassword()" matSuffix class="btn-password">lock</mat-icon>
+                    <mat-icon *ngIf="showPassword == true" (click)="toggleShowPassword()" matSuffix class="btn-password">lock_open</mat-icon>
+                    <mat-hint align="end">Votre mot de passe</mat-hint>
+
+                    <mat-error *ngIf="form.controls['password'].touched && form.controls['password'].errors">
+                        <mat-icon>error</mat-icon>
+                        <span [ngSwitch]="getErrorList(form.controls['password'].errors)">
+                            <span *ngSwitchCase="'required'">
+                                Mot de passe obligatoire !
+                            </span>
+                        </span>
+                    </mat-error>
+
+                </mat-form-field>
+            </div>
+            <button *ngIf="loginLoaded; else loading" type="submit" mat-raised-button matRipple color="primary" [disabled]="form.valid === false" class="button-submit btn-m">VALIDER</button>
+            <div class="choice">
+                <div>
+                    Vous ne possédez pas de compte ?
+                </div> 
+                <a mat-stroked-button class="btn-m" routerLink="/inscription">S'inscrire</a>
+            </div>
+        </div>
+    </form>
+
+    <ng-template #signupSuccess>
+        <div class="signup-success">
+            <h4>Connexion Réussi !</h4>
+            <div>Redirection en cours...</div>
+            <a href="/dashboard" mat-button color="primary">Accéder directement au dashboard</a>
+        </div>
+    </ng-template>
+</div>
+
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>

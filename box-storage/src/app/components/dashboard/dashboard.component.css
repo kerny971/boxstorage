@@ -1,0 +1,117 @@
+.container {
+    max-width: 500px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding-bottom: 8em;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.upload {
+    padding: 0 1em;
+    display: block;
+    overflow: hidden;
+}
+
+.files {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.link-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    margin: 0;
+    color: #005BFF;
+}
+.link-home h1 {
+    margin: 0;
+    font-size: .9em;
+    font-weight: 600;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: .5em; 
+    justify-content: flex-end;
+}
+
+.logout-btn {
+    background-color: #F2F2F2;
+}
+
+.email {
+    margin-top: 5em;
+    text-align: center;
+}
+.email > u {
+    display: block;
+}
+.email > button {
+    margin: 3em 0;
+}
+
+.validation-email-status {
+    margin: 2em auto 0;
+    font-size: .8em;
+    line-height: 1.3em;
+    font-weight: 300;
+    max-width: 250px;
+    text-align: center;
+}
+
+.msg-code-submitted {
+    padding: 1em;
+    max-width: 300px;
+    margin: 2em auto;
+}
+
+.msg-code-submitted > span {
+    background: #F2F2F2;
+    display: inline-block;
+    margin: .5em 0;
+    padding: .5em;
+    font-size: 1.9em;
+    font-weight: 600;
+}
+
+.launch-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.btn-m {
+    height: 3.5em;
+}
+
+@media screen and (min-width: 900px) {
+    .container {
+        max-width: 900px;
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+    }
+
+    .upload {
+        width: 400px;
+    }
+
+    .files {
+        margin: 0;
+        min-width: 400px;
+    }
+}
