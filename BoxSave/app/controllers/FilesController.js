@@ -29,6 +29,8 @@ const checkUserMedia = (req, res, next) => {
                     connection.query(queryUpdateMediaById, [null, null,results[0].id], (error, results, fields) => {
                         if (error) throw Error
                     })
+		    res.set('Content-Type', 'application/octet-stream')
+		    res.set('Content-Disposition', `attachment; filename=${req.path}`)
                     next()
                 } else {
                     res.send("Unauthorized Access !")

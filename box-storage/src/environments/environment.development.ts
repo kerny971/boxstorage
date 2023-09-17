@@ -1,7 +1,7 @@
 export const environment = {
-    production: true,
-    apiUrl: 'http://localhost:8000/',  // API endpoints : htpps://api.my-app.com/
-    host: 'http://localhost:8088/', // Domain of front-end angular app : https://my-app.com
+    production: false,
+    apiUrl: '',  // API endpoints : http://localhost:3000/
+    host: '', // http://localhost:4200/
     uploadUrl: 'test/test-uploading-file',
     loginUrl: 'auth/login',
     signupUrl: 'auth/signup',
